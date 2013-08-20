@@ -1,0 +1,44 @@
+---
+layout: default
+title: Why have one?
+order: 1
+---
+
+<h2>vs normal jQuery + html</h2>
+
+<h3>Normal jQuery + html</h3>
+<iframe class="embedded" src="{{ site.url }}/includes/jquery-example/index.html"></iframe>
+{% highlight js %}
+    {% include jquery-example/js/app.js %}
+{% endhighlight %}
+{% highlight html %}
+    {% include jquery-example/index.html %}
+{% endhighlight %}
+
+
+<h3>SPA (via Ember.js)</h3>
+<iframe class="embedded" src="{{ site.url }}/includes/ember-example/index.html"></iframe>
+{% highlight js %}
+    {% include emberjs-example/js/app.js %}
+{% endhighlight %}
+
+{% highlight html %}
+{% raw %}
+{{#unless liked}}
+
+  <div id="main">
+    <button id="like" {{action cliq}}>like</button>
+  </div>
+
+{{/unless}}
+
+{{#if liked}}
+
+  <div id="footer">
+    <button id="undo" {{action cliq}}>undo</button>
+    <span>You liked this post</span>
+  </div>
+
+{{/if}}
+{% endraw %}
+{% endhighlight %}
